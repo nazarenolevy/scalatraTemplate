@@ -29,6 +29,7 @@ lazy val root = (project in file(".")).
       "org.squeryl" %% "squeryl" % "0.9.7",
       "org.mariadb.jdbc" % "mariadb-java-client" % "2.0.3",
       "joda-time" % "joda-time" % "2.9.9",
-      "com.typesafe" % "config" % "1.3.1"
+      "com.typesafe" % "config" % "1.3.1",
+      "com.iheart" %% "ficus" % "1.4.2"
     ),
   )
