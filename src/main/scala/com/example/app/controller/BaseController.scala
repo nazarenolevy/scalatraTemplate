@@ -1,4 +1,5 @@
 package com.example.app.controller
+
 import org.json4s.{DefaultFormats, Formats, JValue}
 import org.scalatra.json._
 import com.example.app.common.logging.Logging
