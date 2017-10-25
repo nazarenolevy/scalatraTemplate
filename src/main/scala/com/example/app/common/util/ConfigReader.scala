@@ -15,7 +15,7 @@ trait ConfigReader {
 
 object ConfigReader extends Logging {
   import scala.collection.immutable._
-  import scala.collection.JavaConversions._
+  import scala.collection.JavaConverters._
 
   private val EnvironmentKey = "environment"
   private val OverrideKey = "override"
@@ -45,7 +45,7 @@ object ConfigReader extends Logging {
   }
 
   private[common] def reloadConfiguration(overridingConfigMap: Map[String, _ <: Any] = Map()): Config = {
-    val overrideConf: Config = ConfigFactory.parseMap(overridingConfigMap)
+    val overrideConf: Config = ConfigFactory.parseMap(overridingConfigMap.asJava)
     val eConf = overrideConf.withFallback(ConfigFactory.load().getConfig(environment).withFallback(defaultConfig))
     Option(System.getProperty(OverrideJvmOpt)).map(loadOverrideConfFile(_, eConf)).getOrElse(eConf)
   }
