@@ -30,6 +30,8 @@ lazy val root = (project in file(".")).
       "org.mariadb.jdbc" % "mariadb-java-client" % "2.0.3",
       "joda-time" % "joda-time" % "2.9.9",
       "com.typesafe" % "config" % "1.3.1",
-      "com.iheart" %% "ficus" % "1.4.2"
+      "com.iheart" %% "ficus" % "1.4.2",
+      "org.scalatra" %% "scalatra-json" % "2.5.3",
+      "org.json4s"   %% "json4s-jackson" % "3.5.3"
     ),
   )

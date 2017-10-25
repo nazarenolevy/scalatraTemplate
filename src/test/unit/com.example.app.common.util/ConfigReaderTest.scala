@@ -6,7 +6,7 @@ import org.scalatest.FunSuiteLike
 import net.ceedubs.ficus.Ficus._
 import org.scalatra.test.scalatest.ScalatraSuite
 
-class ConfigReaderTest extends UnitTest with ScalatraSuite with FunSuiteLike with Logging with ConfigReader {
+class ConfigReaderTest extends UnitTest with ScalatraSuite with FunSuiteLike with ConfigReader {
 
   test("Should read the configuration"){
     envConfiguration.as[String]("environment") shouldBe "test"

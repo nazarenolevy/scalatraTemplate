@@ -1,8 +1,6 @@
 package com.example.app.common.filter
 
-import javax.servlet.http.HttpServletRequest
 import javax.servlet.{FilterChain, ServletRequest, ServletResponse}
-
 import org.joda.time.DateTime
 import org.scalatra.ScalatraFilter
 import org.scalatra.servlet.RichRequest
@@ -22,7 +20,6 @@ class RoutingFilter extends ScalatraFilter with RitchFilter {
     MDC.put(UOW, uow)
     MDC.put(USER_ID, uid)
     MDC.put(REQUEST_ID, requestId)
-
 
     chain.doFilter(request, response)
   }

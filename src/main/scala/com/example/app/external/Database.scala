@@ -1,16 +1,18 @@
 package com.example.app.external
 
 import com.example.app.common.logging.Logging
+import com.example.app.common.util.ConfigReader
 import com.mchange.v2.c3p0.ComboPooledDataSource
 import org.squeryl.adapters.MySQLInnoDBAdapter
 import org.squeryl.{Session, SessionFactory}
 
 
-trait Database extends Logging {
+trait Database extends Logging with ConfigReader {
 
   val databaseUsername = ""
   val databasePassword = ""
   val driverClass = ""
+  val jdbcUrl = ""
 
   def init() = {
 
@@ -26,7 +28,7 @@ trait Database extends Logging {
     dataSource.setIdleConnectionTestPeriod(300)
     dataSource.setTestConnectionOnCheckin(true)
     dataSource.setPreferredTestQuery("SELECT 1")
-    dataSource.setJdbcUrl(s"jdbc:mariadb://localhost:3306/")
+    dataSource.setJdbcUrl(jdbcUrl)
 
 
     SessionFactory.concreteFactory = Some(() => connection)

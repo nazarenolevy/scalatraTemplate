@@ -2,9 +2,12 @@ package com.example.app.external
 
 class MariaDB extends Database {
 
-  override val databaseUsername: String = "root"
-  override val databasePassword: String = ""
-  override val driverClass: String = "org.mariadb.jdbc.Driver"
+  val config = envConfiguration.getConfig("mariaDB")
+
+  override val databaseUsername: String = config.getString("databaseUsername")
+  override val databasePassword: String = config.getString("databasePassword")
+  override val driverClass: String = config.getString("driverClass")
+  override val jdbcUrl: String = s"jdbc:mariadb://${config.getString("driverClass")}/"
 
   override def connect(): Unit = {}
 
