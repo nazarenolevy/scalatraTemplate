@@ -1,7 +1,6 @@
 package com.example.app.modules
 
-
-import com.example.app.MyScalatraController
+import com.example.app.controller.MyScalatraController
 import scaldi.Module
 
 class GlobalModule extends Module {

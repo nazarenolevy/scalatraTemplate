@@ -1,8 +1,8 @@
 import javax.servlet.ServletContext
 
-import com.example.app.MyScalatraController
 import com.example.app.common.filter.{LoggingFilter, RoutingFilter}
 import com.example.app.common.logging.Logging
+import com.example.app.controller.MyScalatraController
 import com.example.app.external.MariaDB
 import com.example.app.modules.{ExternalModule, FiltersModule, GlobalModule}
 import org.scalatra._

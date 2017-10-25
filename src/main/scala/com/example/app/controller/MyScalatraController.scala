@@ -1,6 +1,4 @@
-package com.example.app
-
-import com.example.app.controller.BaseController
+package com.example.app.controller
 
 class MyScalatraController extends BaseController {
 

@@ -1,5 +1,6 @@
 package com.example.app
 
+import com.example.app.controller.MyScalatraController
 import org.scalatra.test.scalatest._
 import org.scalatest.FunSuiteLike
 
