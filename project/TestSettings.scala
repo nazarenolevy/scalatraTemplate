@@ -1,4 +1,4 @@
-import sbt.Keys._
+import sbt.Keys.{javaOptions, _}
 import sbt._
 
 object TestSettings {
@@ -9,7 +9,8 @@ object TestSettings {
   val unitTestsSettings = Seq(
     parallelExecution in UnitTest := false,
     fork in UnitTest := true,
-    scalaSource in UnitTest := baseDirectory.value / "src/test/unit"
+    scalaSource in UnitTest := baseDirectory.value / "src/test/unit",
+    javaOptions in UnitTest += "-Dconfig.file=" + baseDirectory.value / "src/test/resources/application.conf"
   )
 
 
